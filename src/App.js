@@ -10,16 +10,6 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 const {Header, Content, Footer } = Layout;
 
-  const [gridApi, setGridApi] = useState(null);
-  const [gridColumnApi, setGridColumnApi] = useState(null);
-
-  const [rowData, setRowData] = useState([
-      { make: "Toyota", model: "Celica", price: 35000 },
-      { make: "Ford", model: "Mondeo", price: 32000 },
-      { make: "Porsche", model: "Boxter", price: 72000 }
-  ]);
-
-
 class App extends Component {
 
   state = { 
@@ -75,7 +65,8 @@ class App extends Component {
           <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
             <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
               <AgGridReact
-                  rowData={rowData}>
+                  // rowData={rowData}
+                  >
                   <AgGridColumn field="make"></AgGridColumn>
                   <AgGridColumn field="model"></AgGridColumn>
                   <AgGridColumn field="price"></AgGridColumn>
