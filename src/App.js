@@ -82,7 +82,7 @@ class App extends Component {
               title="PANTALLA DE CONFIGURACIÓN"
               centered
               visible={this.state.visible}
-              onOk={this._handleSave}
+              onOk={this._setVisible}
               onCancel= {this._setVisible}
               width={1000}
           >
