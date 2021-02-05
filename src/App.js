@@ -63,13 +63,18 @@ class App extends Component {
         </Header>
         <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
           <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
-            <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
+            <div className="ag-theme-alpine" style={{ height: 400, width: '100%' }}>
               <AgGridReact
                   // rowData={rowData}
                   >
-                  <AgGridColumn field="make"></AgGridColumn>
-                  <AgGridColumn field="model"></AgGridColumn>
-                  <AgGridColumn field="price"></AgGridColumn>
+                  <AgGridColumn field="Id"></AgGridColumn>
+                  <AgGridColumn field="Nombre"></AgGridColumn>
+                  <AgGridColumn field="Direccion"></AgGridColumn>
+                  <AgGridColumn field="Fecha alta"></AgGridColumn>
+                  <AgGridColumn field="Registrador"></AgGridColumn>
+                  <AgGridColumn field="Tipo"></AgGridColumn>
+                  <AgGridColumn field="Accesos"></AgGridColumn>
+                  <AgGridColumn field="Facial"></AgGridColumn>
               </AgGridReact>
             </div>  
           </div>
@@ -97,7 +102,9 @@ class App extends Component {
                 <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
                     {this.state.personalizado == "true" 
                     ? 
-                      <div>THIS IS HERE FOR ANOTHER TABLE</div>
+                      <div>
+                          THIS IS ANOTHER TABLE OF AG-GRID                          
+                      </div>
                     : 
                     
                     <Form method="POST" onSubmitCapture={this._handleSave}>
@@ -108,13 +115,13 @@ class App extends Component {
                             <Input placeholder="0" id="colonoPeatonal" name="colonoPeatonal" style={{width:'70%'}} onChange={this._handleChange} type="number" min="0" required={true} />
                         </Form.Item>
                         <Form.Item label="PERSONAL PEATONAL">
-                            <Input placeholder="0" id="personalPeatonal" name="personalPeatonal" style={{width:"200px"}} type="number" min="0" required={true} onChange={this._handleChange} />
+                            <Input placeholder="0" id="personalPeatonal" name="personalPeatonal" style={{width:'70%'}} type="number" min="0" required={true} onChange={this._handleChange} />
                         </Form.Item>
                         <Form.Item label="PERSONA VEHICULAR">
-                            <Input placeholder="0" id="personalVehicular" name="personalVehicular" style={{width:"200px"}} type="number" min="0" required={true} onChange={this._handleChange}/>
+                            <Input placeholder="0" id="personalVehicular" name="personalVehicular" style={{width:'70%'}} type="number" min="0" required={true} onChange={this._handleChange}/>
                         </Form.Item>
                         <Form.Item label="VISITAS VIP">
-                            <Input placeholder="0" id="visitasVip" name="visitasVip" style={{width:"200px"}} type="number" min="0" required={true} onChange={this._handleChange}/>
+                            <Input placeholder="0" id="visitasVip" name="visitasVip" style={{width:'70%'}} type="number" min="0" required={true} onChange={this._handleChange}/>
                         </Form.Item>
                         <Form.Item >
                             <Button onClick={this._handleSave} type="primary">Guardar</Button>
